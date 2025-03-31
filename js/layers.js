@@ -153,7 +153,7 @@ if (hasUpgrade('p', 13)) mult = mult.add(1)
          unlocked() { return (hasUpgrade('s', 14))},
        },
     //16:{title:"我讨厌挂机",
-    //description:"源点获取量指数+0.3（0.5-0.8），并且源点获取量×2",
+    //description:"源点获取量指数+0.3(0.5-0.8)，并且源点获取量×2",
     //cost: n(10000),
     //unlocked() { return (hasUpgrade('a', 14))}, },
     //17:{ title: "讨厌的时间墙",
