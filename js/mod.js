@@ -1,8 +1,8 @@
 let modInfo = {
 	name:"摇钱树",
 	id: "qb",
-	author:Smart-262",
-	pointsName: Q币",
+	author:"Smart-262",
+	pointsName:" Q币",
 	modFiles: ["layers.js",  "tree.js"],
 	discordName: "作者的B站链接",
 	discordLink: "https://b23.tv/ALvJ9Im",
