@@ -1,5 +1,6 @@
 //Other Rows
-addLayer("A", {
+addLayer("A", 
+{
   infoboxes: {
  introBox: {
   title: "成就",
@@ -19,8 +20,8 @@ addLayer("A", {
         return ("成就")
     },
      
-}
-	},
+
+
     achievementPopups: true,
     achievements: {
         11: {
@@ -56,7 +57,8 @@ addLayer("A", {
 )//成就
 
 //Row 0
-addLayer("o", {
+addLayer("o", 
+{
   infoboxes: {
  introBox: {
   title:"原 点",
@@ -153,7 +155,7 @@ if (hasUpgrade('p', 13)) mult = mult.add(1)
          unlocked() { return (hasUpgrade('s', 14))},
        },
     //16:{title:"我讨厌挂机",
-    //description:"源点获取量指数+0.3(0.5-0.8)，并且源点获取量×2",
+    //description:"源点获取量指数+0.3（0.5-0.8），并且源点获取量×2",
     //cost: n(10000),
     //unlocked() { return (hasUpgrade('a', 14))}, },
     //17:{ title: "讨厌的时间墙",
@@ -166,7 +168,8 @@ if (hasUpgrade('p', 13)) mult = mult.add(1)
 })//原点
 
 //Row 1 
-addLayer("p", {
+addLayer("p",
+{
   infoboxes: {
     introBox: {
     title: "声望",
@@ -209,17 +212,24 @@ addLayer("p", {
         
     },
   challenges: {
-    11: {
+  /*  11: 
+   {
         name: "Past",
         challengeDescription: "歌曲获取量变为原来的0.6次方",
         goalDescription:"1e440 Notes",
         rewardDescription:"歌曲获取量^1.2",
         unlocked(){unlock= false
         if(hasUpgrade('a',15)) unlock=true
-   return unlock
+        return unlock
+
         },
-        canComplete: function() {return player.points.gte('1e440')||hasMilestone('p',0)},
+        canComplete: function() {return player.points.gte('1e440')||hasMilestone
+        ('p',0)
+          
+         },
+        
     },
+    */
 },
   upgrades: {
     11:{ title: "PQ链接",
