@@ -173,8 +173,8 @@ addLayer("p",
   infoboxes: {
     introBox: {
     title: "声望",
-    body(){ return "新的行在召唤！——原版声望树成就(第二行重置)
-    <br>等等声望你不是在第一行吗
+    body(){ return "新的行在召唤！——原版声望树成就(第二行重置)"
+    
          },
         },
   
