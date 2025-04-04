@@ -164,7 +164,7 @@ if (hasUpgrade('p', 13)) mult = mult.add(1)
          //cost: n(1e5),},
 },
 
-}
+
 })//原点
 
 //Row 1 
