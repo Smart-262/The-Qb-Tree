@@ -1,31 +1,40 @@
 let modInfo = {
-	name:"音乐游戏树",
-	id: "Rhythm Game",
-	author: "QqQe308",
-	pointsName: "Notes",
-	modFiles: ["layers.js", "layers2.js", "tree.js"],
-	discordName: "作者的B站链接",
+	name:"摇钱树",
+	id: "Qb",
+	author: "Smart-262",
+	pointsName:"Q币",
+	modFiles: ["layers.js", "tree.js"],
+	discordName: "导师的b站",
 	discordLink: "https://b23.tv/ALvJ9Im",
 	initialStartPoints: n(10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 // Set your version in num and name
 let VERSION = {
-	num: "0.59",
-	name: "Rebalance II",
+	num: "0.00",
+	name: "II",
 }
 
-let winText = `恭喜通关！你已经完成了你的音游之旅…吗？请期待下一个更新！<br>当前结局：e1.213e7 Notes，下一个更新:更多重平衡！`
+let winText = `这8个小孩各有神通
+大娃カ大无穷
+二娃千里眼顺风耳
+三娃刀枪不λ
+四娃移动打人机
+五娃移动水龙头
+六娃隐身
+七娃他可有——个万物都可以收进去的宝葫芦
+而八娃更加厉害 他可以随时随地做出美味的忄汉堡 俗称老八[doge][doge][doge][dog][doge][doge][doge][doge]
+对了你看到这和重写前的有什么不同吗`
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte('e1.213e7')
+	return player.points.gte('1.213e7')
 	//return false
 }
 
 // Display extra things at the top of the page
 var displayThings = [
-  function() {
+  /*function() {
    let b=""
    if(gcs('t',31)) b=b+"<br>存档长度: "+JSON.stringify(player).length+"<br>编码后存档长度: "+formatsave.encode(JSON.stringify(player)).length
    if(gcs('S',11)) b=b+"<br>PTT: "+format(player.a.ptt)
@@ -40,83 +49,11 @@ var displayThings = [
   if(getPointGen().gte(player.pointSoftcapStart.pow(0.9))) a=a+"<br>Notes获取量在"+format(player.pointSoftcapStart)+"达到软上限！<br>软上限效果:超过部分^"+format(player.pointSoftcapPower,3)
   a=a+"<br>音乐游戏树一周年快乐！"
    return a+b
-  }
+  }*/
+  你充Q币嘛
 ]
 
-let changelog = `<h1>更新日志</h1><br>
-<h2>v0.59 Rebalance II 2024/8/26-2024/10/6<br>
-<h3>- 重平衡1Cyten前的游戏流程<br>
-<h3>- 为游戏添加了攻略(Pre-Cytus)<br>
-<h3>- 修复了若干bug<br>
-<h3>- 音乐游戏树一周年快乐！！！！<br>
-- 游戏结局：e1.213e7 Notes<br><br>
-<h2>v0.55 E is for Experience 2024/7/26-2024/8/21<br>
-<h3>- 添加1个层级：经验<br>
-- 添加2+14=16个里程碑，7+14=21个升级，1个挑战，2+5=7个可购买<br>
-- 添加经验分配，包括7(8)个可点击，添加更多“联动”功能<br>
-- 添加了现实时间统计，优化代码<br>
-- 游戏结局：e1.213e7 Notes<br><br>
-<h2>v0.5 Riztime 2024/6/28-2024/7/9<br>
-<h3>- 添加1个层级：Rizline，添加“联动”功能<br>
-- 添加1+12=13个里程碑，7+21=28个升级，1个挑战，3个可购买<br>
-- 添加了一些Qol功能，增加了更多统计和测试层内容<br>
-- 重新平衡部分内容并优化代码<br>
-- 更改了存档编码方式，减少了存档长度，原存档仍然可以正常导入<br>
-- 游戏结局：e7350000 Notes<br><br>
-<h2>v0.4 Judgment 2024/4/1-2024/6/25<br>
-<h3>- 添加1个层级：判定，添加判定区间挑战<br>
-- 添加7个里程碑，8+15=21个升级，1个挑战，6个可购买，Rot升级树中的2个“升级”<br>
-- 游戏结局：e4194304 Notes<br><br>
-<h2>v⓪.⑶❺ Milk Rhythm 2024愚人节版本 2024/4/1<br>
-<h3>-临时更改了游戏界面<br><br>
-<h2>v0.35 Rhythm Milthm 2024/2/3-2024/3/9<br>
-<h3>- 添加1个层级：Milthm<br>
-- 添加Rot升级树中的11个“升级”<br>
-- 添加9个Milthm维度，添加计数频率<br>
-- 添加7个里程碑，2+2+7+14=25个升级，1个挑战<br>
-- 游戏结局：1e3075000 Notes，120 Rot点数<br><br>
-<h2>v0.3 Rotative Rotating Rotation 2024/1/17-2024/2/2<br>
-<h3>- 添加1个层级：Rotaeno<br>
-- 添加Rot升级树，包括24个“升级”<br>
-- 添加7个里程碑，2+2=4个可购买，14+21=35个升级，2个挑战<br>
-- 修复了一堆bug以及修改了游戏一些内容<br>
-- 降低了谱面、曲包、Rotaeno层级的一些时间墙的时间<br>
-- 添加了6个隐藏成就和一些彩蛋<br>
-- 终于可以导出、导入存档了<br>
-- 游戏结局：1e2600000 Notes，68 Rot点数，1e16旋律<br><br>
-<h2>v0.25 Song Packed 2023/11/27~2023/12/31<br>
-<h3>- 添加1个层级：曲包<br>
-- 添加4+2=6个可购买，6个可点击，5个里程碑，添加课题力量<br>
-- 添加Arcaea中的蛇和龙，添加了10个蛇和龙的效果<br>
-- 添加14+14=28个升级<br>
-- 游戏结局：1e955000 Notes<br><br>
-<h2>v0.2 Chart Design 2023/11/11~2023/11/27<br>
-<h3>- 添加1个层级：Chart<br>
-- 添加物量和定数，添加Phigros-Notes和特殊Notes，添加课题模式，添加课题能量<br>
-- 添加2个里程碑，4个挑战，8个可购买<br>
-- 添加2+21=23个升级<br>
-- 修复了一堆bug<br>
-- 游戏结局：1e376000 Notes<br><br>
-<h2>v0.15 Cytusser 2023/10/28~2023/11/5<br>
-<h3>- 添加1个层级：Cytus，添加Cytus力量<br>
-- 添加9个里程碑，8个可购买，1个挑战<br>
-- 添加5+5+2+2+7=21个升级<br>
-- 重新平衡游戏，更改部分显示文本<br>
-- 游戏结局：1e100000 Notes（1e32 Cytus力量）<br><br>
-<h2>v0.1 REBALANCE 2023/10/18~2023/10/26<br>
-<h3>- 添加2个层级：Lanota，魔王曲<br>
-- 添加“PTT”，包括3个可点击<br>
-- 添加“RKS”，包括2个可点击<br>
-- 添加7+4+5+1=17个升级，3+1+2=6个里程碑<br>
-- 重新制作了游戏（修改很多升级，重新平衡，修复了一堆bug）<br>
-- 添加了“炸档测试”层级<br>
-- 添加了剧情<br>
-- 游戏结局：1e33000 Notes（1e20 Phidata，1e240源点）<br><br>
-<h2>v0.05 Early Game 2023/10/06-2023/10/16<br>
-<h3>- 添加3个层级：歌曲，Arcaea，Phigros<br>
-- 添加14+14+16=44个升级<br>
-- 添加8个挑战，3个可购买，7个里程碑<br>
-- 游戏结局：1e20000 Notes（1e14 Phidata）`//changelog
+let changelog = `konodioda`//changelog
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -137,14 +74,13 @@ function getPointGen() {
 	if(!canGenPoints())
 		return n(0)
 	let gain = n(1)
-	gain = gain.times(player['a'].points).add(1)
-	if (hasUpgrade('s', 11)) gain = gain.times(1e100)
-	if (hasUpgrade('s', 12)) gain = gain.times(upgradeEffect('s', 12))
-	if (hasUpgrade('s', 13)) gain = gain.times(1e200)
-	if (hasUpgrade('s', 14)) gain = gain.times(upgradeEffect('s', 14))
-	if (hasAchievement('A', 13)) gain = gain.times(1e50)
-	if (hasUpgrade('s', 21)) gain = gain.times(upgradeEffect('s', 21))
-	if (hasUpgrade('a', 16)) gain = gain.times(1e30)
+	if (hasUpgrade('o', 11)) gain = gain.times(upgradeEffect('o', 11))
+	if (hasUpgrade('o', 12)) gain = gain.times(upgradeEffect('o', 12))
+	if (hasUpgrade('o', 13)) gain = gain.times(upgradeEffect('o', 13))
+	if (hasUpgrade('o', 14)) gain = gain.times(upgradeEffect('o', 14))
+	//if (hasAchievement('A', 13)) gain = gain.times(1e50)
+	if (hasUpgrade('p', 11)) gain = gain.times(upgradeEffect('p', 11))
+	/*if (hasUpgrade('a', 16)) gain = gain.times(1e30)
 	if (inChallenge('a', 12)) gain = gain.times('1e-500')
 	if (inChallenge('a', 13)) gain = gain.times('1e-500')
 	if(buyableEffect('s',12).gte(1)) gain = gain.times(buyableEffect('s',12))
@@ -209,13 +145,13 @@ if(gain.gte(player.pointSoftcapStart)) gain=gain.div(player.pointSoftcapStart).p
 
 if(player.devSpeed.neq(0)) gain=gain.min(n('e1.213e7').div(player.devSpeed))
 if(inChallenge('r',13))gain= gain.min(player.mi.points)
-
+*/
 	return gain
 }
 
 function pointSoftcapPower() {
  let power=n(0.25)
- if(hasUpgrade('e',27)) power=buyableEffect('e',13)
+// if(hasUpgrade('e',27)) power=buyableEffect('e',13)
  return power
 }
 
@@ -264,7 +200,7 @@ function fixOldSave(oldVersion){
  player.QqQ=0;player.banana=0;player.Liu=0;player.fufu=0;player.Loader=0;player.yszqzls=0;player.yyyxs=0;player.Genshin=0;player.Phigros=0;player.long2024=0;player.QqQe308=0;//过去的彩蛋变量，现在留着太占存档空间了，修改一下
 }
 
-function rksRandom() {return n(player.A.resetTime).sub(n(player.A.resetTime).floor())}
+
 
 function gba(a,b){return getBuyableAmount(a,b)}
 
