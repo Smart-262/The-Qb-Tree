@@ -181,8 +181,8 @@ addLayer("o", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
     //sgainmult//
         mult = n(0.5)
-        sc = player.s.sc
-        sce=player.s.sce
+        //sc = player.s.sc
+        //sce=player.s.sce
         //mult = mult.times(player['a'].points).add(1)
         if (hasUpgrade('p', 12)) mult = mult.times(upgradeEffect('p', 12))
        /* if (hasUpgrade('a', 11)&&hasUpgrade('s',15)) mult = mult.times(100)
@@ -1198,9 +1198,10 @@ addLayer("p",
     position: 0,
     startData() { return {
         unlocked() { return (hasUpgrade('o', 15))
-        //||hasAchievement('A',111)},
+        //||hasAchievement('A',111)
+},
 		points: n(0),
-    }}},
+    }},
      color: "#22eeff",
     requires() {req=n(1000)
    // if(hasUpgrade('a',43))req=req.pow(upgradeEffect('a',43))
@@ -1279,7 +1280,7 @@ addLayer("p",
     description:"使声望加成赚钱速度",
     effect() {return player.p.points.add(2).pow(5)},
 
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))×},
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"×"},
     cost: n(1),
     unlocked() {return true}, },
     12:{ title: "PO直达",
@@ -1287,7 +1288,7 @@ addLayer("p",
     description() {return "声望同样加成原点"},
 
     effect() {return player.p.points.add(3).pow(2.5)},
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))×},
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"×"},
     cost: n(2),
     unlocked() {return hasUpgrade('p',11)}, },
     /*

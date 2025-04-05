@@ -50,7 +50,7 @@ var displayThings = [
   a=a+"<br>音乐游戏树一周年快乐！"
    return a+b
   }*/
-  你充Q币嘛
+  
 ]
 
 let changelog = `konodioda`//changelog
