@@ -195,9 +195,9 @@ addLayer("p",
     baseResource: "原点", 
     baseAmount() {return player['o'].points}, 
     type: "static", 
-    exponent: 1.1, 
-    base:10
-    row: 1, 
+    exponent:1.1, 
+    base:10,
+    row:1, 
     branches() {return 'o']}
     hotkeys: [
         {key: "p", description: "P声望重置", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
